@@ -1,0 +1,46 @@
+class ContaBancaria{
+    titular
+    #saldo
+    
+    getTitular(){
+        return this.titular
+    }
+    setTitular(titular){
+        this.titular = titular
+    }
+    
+    getSaldo(){
+        return this.saldo
+    }
+    setSaldo(saldo){
+        this.saldo = saldo
+    }
+    depositar(saldo){
+        if(saldo > 0){
+            this.saldo += saldo
+        }
+    }
+    sacar(saldo){
+        if(saldo < this.saldo){
+        this.saldo -= saldo
+        }
+        else{
+            console.log('erro')
+        }
+    }
+    
+    verSaldo(){
+        return this.saldo
+    }
+}
+
+let conta1 = new ContaBancaria()
+
+conta1.setTitular("Flavio")
+conta1.setSaldo(0.0)
+
+conta1.depositar(30)
+conta1.depositar(10)
+conta1.verSaldo()
+
+console.log(conta1)
