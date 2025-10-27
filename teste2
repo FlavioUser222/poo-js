@@ -1,0 +1,47 @@
+class Veiculo{
+    
+    constructor(marca,modelo,velocidadeAtual = 0){
+        this.marca = marca
+        this.modelo = modelo 
+        this.velocidadeAtual = velocidadeAtual
+    }
+    
+    acelerar(){
+        console.log(this.modelo,"acelerando a ",this.velocidadeAtual)
+    }
+    
+    frear(){
+        console.log(this.modelo,"freando....")
+    }
+}
+class Carro extends Veiculo{
+    
+    getVelocidadeAtual(){
+        return this.velocidadeAtual
+    }
+    setVelocidadeAtual(velocidadeAtual){
+        this.velocidadeAtual = velocidadeAtual + 10
+    }
+    
+}
+class Moto extends Veiculo{
+     getVelocidadeAtual(){
+        return this.velocidadeAtual
+    }
+    setVelocidadeAtual(velocidadeAtual){
+        this.velocidadeAtual = velocidadeAtual + 20
+    }
+}
+
+let carro1 = new Carro("mercedez","m10",0)
+carro1.setVelocidadeAtual(0)
+carro1.acelerar()
+
+
+
+
+
+
+
+
+
