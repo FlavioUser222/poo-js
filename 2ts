@@ -7,6 +7,7 @@ interface Pessoa{
 class Programador implements Pessoa{
      nome : string;
      idade : number;
+     experiencia :Experiencia
     
     getNome(){
         return this.nome;
@@ -22,8 +23,26 @@ class Programador implements Pessoa{
         this.idade = idade;
     }
     
+  setExperiencia(experiencia: Experiencia) {
+    this.experiencia = experiencia;
+  }
+  
+  
     andar(nome: string): void{
         console.log(nome + "andando");
+    }
+    
+    codar(): void{
+        if(this.experiencia){
+            
+            this.experiencia.tecnologia.forEach(tec=>{
+        console.log(`${this.nome} está programando em ${tec}`);
+                
+            })
+            
+            
+        }
+
     }
 }
 
@@ -69,7 +88,10 @@ experiencia.setTecnologias(['python','javascript','Postgress'])
 experiencia.setAnosDeTrabalho(3)
 
 
-console.log(experiencia.programador.nome)
+dev1.setExperiencia(experiencia)
+dev1.codar()
+
+console.log(dev1)
 
 
 
