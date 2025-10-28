@@ -61,10 +61,15 @@ let dev1 = new Programador()
 dev1.setNome("Joao")
 dev1.setIdade(40)
 
+
 let experiencia = new Experiencia()
 
+experiencia.setProgramador(dev1)
 
-console.log(dev1)
+
+
+
+console.log(experiencia)
 
 
 
