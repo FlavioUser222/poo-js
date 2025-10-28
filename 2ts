@@ -65,11 +65,11 @@ dev1.setIdade(40)
 let experiencia = new Experiencia()
 
 experiencia.setProgramador(dev1)
+experiencia.setTecnologias(['python','javascript','Postgress'])
+experiencia.setAnosDeTrabalho(3)
 
 
-
-
-console.log(experiencia)
+console.log(experiencia.programador.nome)
 
 
 
