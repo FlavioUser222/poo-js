@@ -42,7 +42,19 @@ class Programador implements Pessoa{
             
             
         }
-
+    }
+    senioridade(): void{
+        
+        if(this.experiencia.anosDeTrabalho >= 5){
+            console.log(this.nome + " programador Senior")
+        }
+        else if(this.experiencia.anosDeTrabalho >= 3 || this.experiencia.anosDeTrabalho >= 1.5 ){
+            console.log(this.nome + " programador Pleno")
+        }
+        else if(this.experiencia.anosDeTrabalho <= 1){
+            console.log(this.nome + " programador Junior")
+        }
+     
     }
 }
 
@@ -85,11 +97,15 @@ let experiencia = new Experiencia()
 
 experiencia.setProgramador(dev1)
 experiencia.setTecnologias(['python','javascript','Postgress'])
-experiencia.setAnosDeTrabalho(3)
+experiencia.setAnosDeTrabalho(6)
 
 
 dev1.setExperiencia(experiencia)
 dev1.codar()
+
+dev1.senioridade()
+
+
 
 console.log(dev1)
 
