@@ -1,0 +1,168 @@
+interface Pessoa{
+    nome : string;
+    idade : number;
+     andar(nome: string): void;
+}
+
+class Programador implements Pessoa{
+     nome : string;
+     idade : number;
+     experiencia :Experiencia
+    
+    getNome(){
+        return this.nome;
+    }
+    setNome(nome: string){
+        this.nome = nome;
+    }
+    getIdade(){
+        return this.idade;
+    }
+    
+    setIdade(idade: number){
+        this.idade = idade;
+    }
+    
+  setExperiencia(experiencia: Experiencia) {
+    this.experiencia = experiencia;
+  }
+  trabalhar(pessoa : Pessoa){
+      if(pessoa instanceof Programador){
+          console.log("Programador")
+      }
+      else if(pessoa instanceof Designer){
+          console.log("Designer")
+      }
+  }
+  
+    andar(): void{
+        console.log(this.nome + " andando");
+    }
+    
+    codar(): void{
+        if(this.experiencia){
+            
+            this.experiencia.tecnologia.forEach(tec=>{
+        console.log(`${this.nome} está programando em ${tec}`);
+                
+            })
+            
+            
+        }
+    }
+    senioridade(): void{
+        
+        if(this.experiencia.anosDeTrabalho >= 5){
+            console.log(this.nome + " programador Senior")
+        }
+        else if(this.experiencia.anosDeTrabalho >= 3 || this.experiencia.anosDeTrabalho >= 1.5 ){
+            console.log(this.nome + " programador Pleno")
+        }
+        else if(this.experiencia.anosDeTrabalho <= 1){
+            console.log(this.nome + " programador Junior")
+        }
+     
+    }
+}
+
+class Experiencia {
+    programador : Programador
+    anosDeTrabalho : number
+    tecnologia : string[]
+    
+    
+     getProgramador(){
+        return this.programador;
+    }
+    setProgramador(programador: Programador){
+        this.programador = programador;
+    }
+    getAnosDeTrabalho(){
+        return this.anosDeTrabalho;
+    }
+    
+    setAnosDeTrabalho(anosDeTrabalho: number){
+        this.anosDeTrabalho= anosDeTrabalho;
+    }
+    getTecnologias(){
+        return this.tecnologia;
+    }
+    
+    setTecnologias(tecnologia: string[]){
+        this.tecnologia = tecnologia;
+    }
+
+}
+
+
+class Designer implements Pessoa{
+    nome : string;
+     idade : number;
+
+    getNome(){
+        return this.nome;
+    }
+    setNome(nome: string){
+        this.nome = nome;
+    }
+    getIdade(){
+        return this.idade;
+    }
+    
+    setIdade(idade: number){
+        this.idade = idade;
+    }
+    
+    andar(): void{
+        console.log(this.nome + " andando");
+    }
+    
+    criarDesign(){
+        console.log(this.nome + " esta trabalhando no figma")
+    }
+
+}
+
+
+let dev1 = new Programador()
+dev1.setNome("Joao")
+dev1.setIdade(40)
+
+
+let experiencia = new Experiencia()
+
+experiencia.setProgramador(dev1)
+experiencia.setTecnologias(['python','javascript','Postgress'])
+experiencia.setAnosDeTrabalho(6)
+
+
+dev1.setExperiencia(experiencia)
+dev1.codar()
+dev1.andar()
+
+dev1.senioridade()
+dev1.trabalhar()
+
+
+
+let designer1 = new Designer()
+designer1.setNome("Pedrin")
+designer1.setIdade(30)
+designer1.criarDesign()
+designer1.andar()
+
+console.log(dev1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
