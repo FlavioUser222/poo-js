@@ -1,0 +1,58 @@
+interface Pessoa{
+    nome : string;
+    idade : number;
+     andar(nome: string): void;
+}
+
+class Programador implements Pessoa{
+     nome : string;
+     idade : number;
+    
+    getNome(){
+        return this.nome;
+    }
+    setNome(nome: string){
+        this.nome = nome;
+    }
+    getIdade(){
+        return this.idade;
+    }
+    
+    setIdade(idade: number){
+        this.idade = idade;
+    }
+    
+    andar(nome: string): void{
+        console.log(nome + "andando");
+    }
+}
+
+class Experiencia extends Programador{
+    cursos : string
+    anosDeTrabalho : number
+    
+}
+
+
+let dev1 = new Programador()
+dev1.setNome("Joao")
+dev1.setIdade(40)
+
+
+
+
+console.log(dev1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
