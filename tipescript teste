@@ -1,0 +1,62 @@
+class Venda{
+   public nome:string
+    public data:Date
+    private qtdVendida:number
+   private qtdEstoque = 10
+ 
+    constructor(nome:string,data:Date,qtdVendida :number = 0){
+        this.nome = nome
+        this.data = data
+        this.qtdVendida = qtdVendida
+    }
+    
+  public getqtdVendida(){
+     return this.qtdVendida
+ }
+ 
+ setqtdVendida(qtdVendida: number){
+     this.qtdVendida = qtdVendida
+ }
+ 
+venda():string {
+     if(this.qtdVendida <= this.qtdEstoque){
+        this.qtdEstoque = this.qtdEstoque - this.qtdVendida
+        return `${this.nome} vendido com sucesso`
+     } else {
+        return `Erro ao realizar venda Estoque insuficiente`
+     }
+     
+ }
+}
+
+var venda1 = new Venda("Produto1",new Date())
+
+console.log(venda1)
+venda1.setqtdVendida(2)
+
+venda1.venda()
+console.log(venda1)
+
+console.log(venda1.venda())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
