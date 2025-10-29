@@ -1,0 +1,25 @@
+abstract class Pessoa{
+    nome : string
+    idade : number
+    
+    abstract falar():void
+}
+
+class Medico extends Pessoa{
+    getNome(): string{
+        return this.nome
+    }
+    
+    setNome(nome : string): void{
+        this.nome = nome
+    }
+    falar(){
+        console.log(this.nome + " falando")
+    }
+
+}
+
+let medico1 = new Medico()
+medico1.setNome("Pedrin")
+medico1.falar()
+console.log(medico1.getNome())
