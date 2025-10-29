@@ -1,0 +1,18 @@
+abstract class Pessoa{
+    nome : string
+    idade : number
+}
+
+class Medico extends Pessoa{
+    getNome():string{
+        return this.nome
+    }
+    
+    setNome(nome : string): void{
+        this.nome = nome
+    }
+
+}
+
+let pessoa1 = new Pessoa()
+pessoa1.nome = "joao"
