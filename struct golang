@@ -1,0 +1,25 @@
+package main
+import "fmt"
+
+type Produto struct{
+    nome string
+    preco float64
+}
+
+type Estoque struct{
+    qtdEstoque int
+     Produto
+}
+
+func main() {
+     estoque := Estoque{
+         qtdEstoque:100,
+         Produto:Produto{
+             nome:"Tenis",
+             preco:100.0,
+         },
+     }
+     
+    fmt.Println(estoque.Produto.nome)
+
+}
